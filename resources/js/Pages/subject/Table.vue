@@ -11,7 +11,7 @@
 
                 <tbody>
                     <tr class="hover:bg-grey-lighter" v-for="(d, index) in data" :key="index" >
-                        <td class="py-4 px-6 border-b border-grey-light" >{{ d.sub }}</td>
+                        <td class="py-4 px-6 border-b border-grey-light" @click="show(d.id)">{{ d.sub }}</td>
                         <td class="py-4 px-6 border-b border-grey-light" >{{ d.point }}</td>
                     </tr>
                 </tbody>
@@ -25,6 +25,9 @@ export default {
     name: "Table",
     props : ['data'],
     methods : {
+        show(id) {
+            location.href="/showSubject/"+id;
+        }
     }
 }
 </script>

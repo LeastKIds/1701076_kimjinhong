@@ -143,8 +143,9 @@ class SubjectController extends Controller
     public function myIndex() {
         $id = auth() -> user() -> id;
 
-        $course = DB::table('courses') -> where('user_id', $id) -> join('subjects', 'courses.subject_id', '==', 'subjects.id') -> get();
-
+            $course = Course::join('users', 'courses.user_id', '=', 'users.id') ->
+            join('subjects','courses.subject_id', '=', 'subjects.id') -> select('*') ->
+            paginate(5);
         return Inertia::render('subject/MySubject',['course' => $course]);
     }
 }

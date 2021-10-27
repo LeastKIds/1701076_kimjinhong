@@ -28,6 +28,9 @@ export default {
         show(id) {
             location.href="/showSubject/"+id;
         }
+    },
+    mounted() {
+        console.log(this.data);
     }
 }
 </script>

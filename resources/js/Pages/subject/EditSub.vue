@@ -16,8 +16,8 @@
         </label>
 
         <button class="p-2 pl-5 pr-5 transition-colors duration-700 transform bg-indigo-500 hover:bg-blue-400 text-gray-100 text-lg rounded-lg focus:border-4 border-indigo-300"
-
-        >등록</button>
+            @click="updateSub"
+        >수정</button>
 
     </app-layout>
 </template>
@@ -37,6 +37,22 @@ export default {
     data() {
         return {
             sub : '',
+        }
+    },
+    methods : {
+        updateSub(){
+            const data = {sub : this.sub.sub, point : this.sub.point, explain : this.sub.explain}
+            axios.patch('/showSubject/update/'+this.sub.id, data)
+                .then(response => {
+                    console.log(response);
+                    if(response.data.success === 1) {
+                        alert('수정 완료');
+                        location.href="/showSubject/"+this.sub.id;
+
+                    }
+                }).catch(err => {
+                    console.log(err);
+            })
         }
     }
 }

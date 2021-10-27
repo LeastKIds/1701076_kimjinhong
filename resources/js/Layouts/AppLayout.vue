@@ -22,7 +22,7 @@
                                 <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </jet-nav-link>
-                                <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
+                                <jet-nav-link :href="route('MySubject')" :active="route().current('MySubject')">
                                     수강 목록
                                 </jet-nav-link>
                                 <jet-nav-link :href="route('ShowSubject')" :active="route().current('ShowSubject')">

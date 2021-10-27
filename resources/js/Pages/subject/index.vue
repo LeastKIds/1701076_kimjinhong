@@ -43,7 +43,7 @@ export default {
                 .then(response => {
                     console.log(response);
                     alert('등록이 되었습니다.')
-                    location.href="/dashboard";
+                    location.href="/showSubject";
                 }).catch(err => {
                     console.log(err);
             })

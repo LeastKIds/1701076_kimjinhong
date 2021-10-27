@@ -13,4 +13,9 @@ class Subject extends Model
     {
         return $this->belongsToMany(User::class);
     }
+
+    public function courses() {
+        return $this->belongsToMany(Course::class);
+    }
+
 }

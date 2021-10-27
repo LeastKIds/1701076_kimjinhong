@@ -36,7 +36,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/showSubject', [SubjectCon
 Route::middleware(['auth:sanctum', 'verified'])->get('/showSubject/{id}', [SubjectController::class,'showSub']);
 Route::middleware(['auth:sanctum', 'verified'])->delete('/showSubject/{id}', [SubjectController::class,'delete']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/showSubject/edit/{id}', [SubjectController::class,'edit']);
+Route::middleware(['auth:sanctum', 'verified'])->patch('/showSubject/update/{id}', [SubjectController::class,'update']);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/showSubject/check/{id}', [SubjectController::class,'check']);
 Route::middleware(['auth:sanctum', 'verified'])->post('/showSubject/apply/{id}', [SubjectController::class,'apply']);
 Route::middleware(['auth:sanctum', 'verified'])->post('/showSubject/disApply/{id}', [SubjectController::class,'disApply']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/mySubject', [SubjectController::class,'myIndex']) ->name('MySubject');

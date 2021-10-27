@@ -22,6 +22,15 @@
                                 <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </jet-nav-link>
+                                <jet-nav-link :href="route('dashboard')" :active="route().current('dashboard')">
+                                    수강 목록
+                                </jet-nav-link>
+                                <jet-nav-link :href="route('ShowSubject')" :active="route().current('ShowSubject')">
+                                    교과목 목록
+                                </jet-nav-link>
+                                <jet-nav-link :href="route('Test')" :active="route().current('Test')">
+                                    교과목 등록
+                                </jet-nav-link>
                             </div>
                         </div>
 
